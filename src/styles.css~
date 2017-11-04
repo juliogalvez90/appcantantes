@@ -4,6 +4,8 @@ body {
 
 /* Ubicación de la imagen */
 
+background-image: url(relajacion2.png);
+
 /* Para dejar la imagen de fondo centrada, vertical y
 
 horizontalmente */
@@ -29,22 +31,3 @@ de fondo o si hay problemas para cargarla */
 background-color: #66999;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

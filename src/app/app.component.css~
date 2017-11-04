@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'alluraregular';
+    src: url('allura-regular-webfont.woff2') format('woff2'),
+         url('allura-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1 {
+  color: #FEFDFD;
+  font-family: 'alluraregular';
+  font-size: 250%;
+}
+
+
+
