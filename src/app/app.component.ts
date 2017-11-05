@@ -6,9 +6,11 @@ import { Component }   from '@angular/core';
   styleUrls: ['./app.component.css'],
   template: `
             <h1>{{title}}</h1>
+            <nav>
+            <a routerLink="/cuadrodecontrol">Cuadro de Control</a>
             <a routerLink="/cantantes">Cantantes</a>
+            </nav>
             <router-outlet></router-outlet>
-            
   			`
 })
 

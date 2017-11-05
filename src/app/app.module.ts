@@ -8,10 +8,18 @@ import { AppComponent } from './app.component';
 import { CantantesComponent } from './cantantes.component';
 import { CantanteDetailComponent} from './cantante-detail.component';
 import { CantanteService } from './cantante.service';
+import { CuadroDeControlComponent } from './cuadro-de-control.component';
 
 @NgModule({
-  declarations: [ AppComponent, CantantesComponent, CantanteDetailComponent ],
-  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot([ { path: 'cantantes', component: CantantesComponent } ])  ],
+  declarations: [ AppComponent, CantantesComponent, CantanteDetailComponent, CuadroDeControlComponent ],
+  imports:      [ BrowserModule, FormsModule, 
+  				  RouterModule.forRoot
+  				    ([ 
+	  				  	{ path: 'cantantes'       , component: CantantesComponent }, 
+	  				  	{ path: 'cuadrodecontrol' , component: CuadroDeControlComponent },
+	  				  	{ path: ''                , redirectTo: '/dashboard'  , pathMatch: 'full' } 
+  				  	])  
+  				],
   providers:    [ CantanteService ],
   bootstrap:    [ AppComponent ]
 })
