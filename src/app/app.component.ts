@@ -31,7 +31,7 @@ import { OnInit } from '@angular/core';
 
 export class AppComponent implements OnInit {
   
-  title = 'Cantantes';
+  title = 'Cantantes de Santiago y Matías';
   lista_cantantes: Cantante[];
 
   cantante_seleccionado: Cantante ;
