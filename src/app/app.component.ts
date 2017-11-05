@@ -8,6 +8,7 @@ import { Component }   from '@angular/core';
             <h1>{{title}}</h1>
             <a routerLink="/cantantes">Cantantes</a>
             <router-outlet></router-outlet>
+            
   			`
 })
 

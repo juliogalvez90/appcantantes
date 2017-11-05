@@ -16,3 +16,4 @@ import { CantanteService } from './cantante.service';
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
+

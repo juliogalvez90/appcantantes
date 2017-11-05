@@ -24,6 +24,7 @@ import { OnInit } from '@angular/core';
 
 				<cantante-detail [cantante_para_detalle]="cantante_seleccionado"></cantante-detail>
 
+
   			`
 })
 
