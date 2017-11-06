@@ -7,8 +7,8 @@ import { Component }   from '@angular/core';
   template: `
             <h1>{{title}}</h1>
             <nav>
-            <a routerLink="/cuadrodecontrol">Cuadro de Control</a>
-            <a routerLink="/cantantes">Cantantes</a>
+            <a routerLink="/cuadrodecontrol" routerLinkActive="active">Cuadro de Control</a>
+            <a routerLink="/cantantes" routerLinkActive="active">Cantantes</a>
             </nav>
             <router-outlet></router-outlet>
   			`
