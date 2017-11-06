@@ -1,24 +1,37 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute, ParamMap} from '@angular/router';
+import { Location } from '@angular/common' ;
+import 'rxjs/add/operator/switchMap';
+import { OnInit } from '@angular/core';
+
 import { Cantante  } from './cantante';
+import { CantanteService } from './cantante.service';
 
 @Component({
 	selector: 'cantante-detail',
-	template: `
-				<!-- Desde este punto esta la vista de detalle -->
-  				<div *ngIf="cantante_para_detalle">
-	  				<h2> Vista de Detalle {{cantante_para_detalle.name}} </h2>
-
-	  				<div><label>id: </label>  <input [(ngModel)]="cantante_para_detalle.id"> </div>
-	  				<div><label>name: </label> <input [(ngModel)]="cantante_para_detalle.name" placeholder="name"> </div>
-	  				<div><label>video: </label>
-	  					<a target="_blank" rel="noopener" href="{{cantante_para_detalle.video}}">  {{cantante_para_detalle.video}}</a>
-	  				</div>
-	  			</div>
-  			`
+	templateUrl: './cantante-detail.component.html'
 })
 
-export class CantanteDetailComponent{
+export class CantanteDetailComponent implements OnInit {
 
-	@Input() cantante_para_detalle: Cantante ;
+	@Input()
+	cantante_para_detalle: Cantante ;
+
+	constructor( 
+				private serviciodecantantes: CantanteService,
+				private ruta: ActivatedRoute,
+				private ubicacion: Location
+	 ){ }
+
+
+	ngOnInit(): void {
+  			this.ruta.paramMap.switchMap((params: ParamMap) => this.serviciodecantantes.getCantante(+params.get('id'))).subscribe(cantante_para_detalle => this.cantante_para_detalle = cantante_para_detalle);
+	}
+
+
+	goBack(): void{
+		this.ubicacion.back();
+	}
+
 	
 }

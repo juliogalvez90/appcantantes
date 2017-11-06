@@ -1,14 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule }   from '@angular/router';
+import { BrowserModule }             from '@angular/platform-browser';
+import { NgModule }                  from '@angular/core';
+import { FormsModule }               from '@angular/forms';
+import { RouterModule }              from '@angular/router';
 
 
-import { AppComponent } from './app.component';
-import { CantantesComponent } from './cantantes.component';
-import { CantanteDetailComponent} from './cantante-detail.component';
-import { CantanteService } from './cantante.service';
-import { CuadroDeControlComponent } from './cuadro-de-control.component';
+import { AppComponent }              from './app.component';
+import { CantantesComponent }        from './cantantes.component';
+import { CantanteDetailComponent}    from './cantante-detail.component';
+import { CantanteService }           from './cantante.service';
+import { CuadroDeControlComponent }  from './cuadro-de-control.component';
 
 @NgModule({
   declarations: [ AppComponent, CantantesComponent, CantanteDetailComponent, CuadroDeControlComponent ],
@@ -17,8 +17,9 @@ import { CuadroDeControlComponent } from './cuadro-de-control.component';
   				    ([ 
 	  				  	{ path: 'cantantes'       , component: CantantesComponent }, 
 	  				  	{ path: 'cuadrodecontrol' , component: CuadroDeControlComponent },
-	  				  	{ path: ''                , redirectTo: '/dashboard'  , pathMatch: 'full' } 
-  				  	])  
+	  				  	{ path: ''                , redirectTo: '/cuadrodecontrol'  , pathMatch: 'full' }, 
+  				  	  { path: 'detalle/:id'     , component: CantanteDetailComponent } 
+              ])  
   				],
   providers:    [ CantanteService ],
   bootstrap:    [ AppComponent ]

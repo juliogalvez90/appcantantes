@@ -6,6 +6,10 @@ import { CANTANTES }  from './mock-cantantes';
 @Injectable()
 export class CantanteService {
 	
+	getCantante(id: number): Promise<Cantante> {
+    	return this.getCantantes().then(CANTANTES => CANTANTES.find(cantante => cantante.id === id )) ;        
+	};
+
 	getCantantes(): Promise<Cantante[]> {
     	return Promise.resolve(CANTANTES) ;        
 	};

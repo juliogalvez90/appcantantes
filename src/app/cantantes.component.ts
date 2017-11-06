@@ -12,7 +12,7 @@ import { OnInit } from '@angular/core';
   				
 
   				<!-- Desde este punto se muestra toda la lista de cantantes -->
-  				<h2>Mis Cantantes:</h2>
+  			<h2>Mis Cantantes:</h2>
 				<ul class="cantantes">
 				  <li *ngFor="let cantanteLeido of lista_cantantes"  (click)="onSelect(cantanteLeido)"    [class.selected]="cantanteLeido == cantante_seleccionado">
 				    <!-- cada cantante va aqui -->
@@ -23,6 +23,7 @@ import { OnInit } from '@angular/core';
 				</ul>
 
 				<cantante-detail [cantante_para_detalle]="cantante_seleccionado"></cantante-detail>
+
 
 
   			`
